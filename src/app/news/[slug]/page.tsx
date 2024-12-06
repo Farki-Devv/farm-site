@@ -1,17 +1,6 @@
 import Image from 'next/image'
 import HtmlContent from '@/components/HtmlContent'
 
-interface NewsItem {
-	id: number
-	title: string
-	subtitle: string
-	post: string
-	author_post: string
-	added_at: string
-	slug: string
-	image: string
-}
-
 async function getNews(slug: string) {
 	const res = await fetch(`http://37.27.188.235/ru/api/news/detail/${slug}/`, {
 		cache: 'no-store',
@@ -36,7 +25,7 @@ export default async function NewsDetail({
 	}
 
 	return (
-		<article className='container	 px-24 mx-auto px-4 py-8'>
+		<article className='container	 px-24 mx-auto  py-8'>
 			<div className='relative w-full h-[400px] mb-8'>
 				<Image
 					src={news.image}

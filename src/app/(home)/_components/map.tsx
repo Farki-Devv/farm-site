@@ -86,7 +86,7 @@ export const RegionsMap: FC<RegionsMapProps> = ({
 						transform: 'translate(-140%, -60%)',
 					}}
 				>
-					<h3 className='text-lg font-semibold mb-2 text-black text-lg font-bold'>
+					<h3 className='text-lg font-semibold mb-2 text-black'>
 						{hoveredRegion.name}
 					</h3>
 					<div className='space-y-1 text-sm'>
@@ -111,7 +111,7 @@ export const RegionsMap: FC<RegionsMapProps> = ({
 							</span>
 						</p>
 						<p>
-							<span className='font-medium text-black'>Bo'z yerlar:</span>{' '}
+							<span className='font-medium text-black'>Bo`z yerlar:</span>{' '}
 							<span className='text-green-600 font-bold ml-2 text-sm'>
 								{hoveredRegion.boss}
 							</span>

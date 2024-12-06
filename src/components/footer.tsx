@@ -1,6 +1,4 @@
 import { Facebook, Instagram, Twitter } from 'lucide-react'
-import Image from 'next/image'
-
 export default function Footer() {
 	return (
 		<footer className='bg-white text-gray-600 py-8 mt-12'>
@@ -9,17 +7,17 @@ export default function Footer() {
 					<div className='w-full md:w-1/3 mb-8 md:mb-0'>
 						<h3 className='text-lg font-semibold mb-4'>Biz haqimizda</h3>
 						<p className='mb-4'>
-							O'zbekiston fermer, dehqon xo'jaliklari va tomorqa <br /> yer
+							O`zbekiston fermer, dehqon xo`jaliklari va tomorqa <br /> yer
 							egalari kengashi
 						</p>
 					</div>
 					<div className='w-full md:w-1/3 mb-8 md:mb-0'>
-						<h3 className='text-lg font-semibold mb-4'>Bog'lanish</h3>
+						<h3 className='text-lg font-semibold mb-4'>Bog`lanish</h3>
 						<p className='mb-2'>Telefon: +998 71 123-45-67</p>
 						<p className='mb-2'>Email: info@uzfk.uz</p>
 						<p>
-							Manzil: Taras Shevchenko ko'chasi, 1, Tashkent, Yunusabad,
-							Tashkent, Uzbekistan 
+							Manzil: Taras Shevchenko ko`chasi, 1, Tashkent, Yunusabad,
+							Tashkent, Uzbekistan
 						</p>
 					</div>
 					<div className='w-full md:w-1/3'>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { IRegion, regionsPathArray } from './_components/map-array'
+
 import Videos from './_components/videos'
 import { RegionsMap } from './_components/map'
 import Link from 'next/link'
@@ -19,16 +19,8 @@ interface News {
 }
 
 export default function Page() {
-	const [region, setRegion] = useState<IRegion>()
 	const [news, setNews] = useState<News[]>([])
 	const [loading, setLoading] = useState(true)
-
-	const handleClickRegion = (regionId: string) => {
-		const selectedRegion = regionsPathArray.filter(
-			region => region.id === regionId
-		)[0]
-		setRegion(selectedRegion)
-	}
 
 	useEffect(() => {
 		fetch('http://37.27.188.235/ru/api/news/most_read/list/')
@@ -178,13 +170,13 @@ export default function Page() {
 				</div>
 
 				<div className='mb-10'>
-					<h2 className='text-3xl font-bold text-green-600 mb-6'>E'lonlar</h2>
+					<h2 className='text-3xl font-bold text-green-600 mb-6'>E`lonlar</h2>
 					<Announcements />
 					<Link
 						href='/announcements'
 						className='text-green-600 hover:underline mt-4 inline-block'
 					>
-						Barcha e'lonlar
+						Barcha e`lonlar
 					</Link>
 				</div>
 
@@ -197,7 +189,7 @@ export default function Page() {
 				<RegionsMap />
 			</div>
 			<div className='flex flex-col items-center gap-2'>
-				<span className='text-green-600 text-2xl'>Bog'lanish uchun</span>
+				<span className='text-green-600 text-2xl'>Bog`lanish uchun</span>
 				<span className='text-green-600'>
 					почта:{' '}
 					<a href='mailto:info@uzfk.uz' className='text-blue-600'>
