@@ -69,11 +69,11 @@ export default function AnnouncementsPage() {
 				{/* Sarlavha */}
 				<div className='text-center mb-20'>
 					<h1 className='sm:text-3xl text-2xl font-medium title-font text-white mb-4'>
-						Barcha E'lonlar
+						Barcha E`lonlar
 					</h1>
 					<p className='text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-white font-bold'>
-						Fermerlar va dehqonlar uchun muhim e'lonlar, tadbirlar va
-						imkoniyatlar to'plami
+						Fermerlar va dehqonlar uchun muhim e`lonlar, tadbirlar va
+						imkoniyatlar to`plami
 					</p>
 					<div className='flex mt-6 justify-center'>
 						<div className='w-16 h-1 rounded-full bg-indigo-500 inline-flex'></div>
