@@ -23,7 +23,7 @@ export default function Page() {
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
-		fetch('http://37.27.188.235/ru/api/news/most_read/list/')
+		fetch('http://37.27.188.235:5000/ru/api/news/most_read/list/')
 			.then(res => res.json())
 			.then(data => {
 				setNews(data)

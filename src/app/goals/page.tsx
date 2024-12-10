@@ -17,7 +17,9 @@ export default function Page() {
 	const [error, setError] = useState<string | null>(null)
 
 	useEffect(() => {
-		fetch('http://37.27.188.235/ru/api/maqsad/list/')
+		fetch(
+			`${process.env.NEXT_PUBLIC_SERVER}:${process.env.NEXT_PUBLIC_PORT}/ru/api/maqsad/list/`
+		)
 			.then(res => {
 				if (!res.ok) {
 					throw new Error(`HTTP error! status: ${res.status}`)

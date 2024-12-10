@@ -22,30 +22,28 @@ export default function NewsPage() {
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState<string | null>(null)
 
+	const apiUrl = 'http://37.27.188.235:5000/ru/api/news/most_read/list/'
 	useEffect(() => {
-		fetch(
-			`${process.env.NEXT_PUBLIC_SERVER}:${process.env.NEXT_PUBLIC_PORT}/${process.env.NEXT_PUBLIC_API}`
-		)
-			.then(res => {
-				if (!res.ok) {
-					throw new Error(`HTTP error! status: ${res.status}`)
+		setIsLoading(true) // Har bir so'rovda loadingni o'rnatamiz
+		fetch(apiUrl)
+			.then(response => {
+				if (!response.ok) {
+					throw new Error(`HTTP xato! Status: ${response.status}`)
 				}
-				return res.json()
+				return response.json()
 			})
 			.then(data => {
 				setNews(data)
-				setIsLoading(false)
+				setError(null) // Agar ma'lumot muvaffaqiyatli kelsa xatoni tozalaymiz
 			})
-			.catch(err => {
-				setError(
-					err instanceof Error
-						? err.message
-						: 'Yangiliklar yuklanishida xatolik'
-				)
-				console.error('Error fetching news:', err)
-				setIsLoading(false)
+			.catch(error => {
+				console.error('So`rovda xatolik yuz berdi:', error.message)
+				setError(error.message) // Xatoni saqlaymiz
 			})
-	}, [])
+			.finally(() => {
+				setIsLoading(false) // Yuklanishni to'xtatamiz
+			})
+	}, [apiUrl])
 
 	if (isLoading) {
 		return (

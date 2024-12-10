@@ -19,7 +19,7 @@ export default function Announcements() {
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
-		fetch('http://37.27.188.235/ru/api/elon/most_read/list/')
+		fetch('http://37.27.188.235:500/ru/api/elon/most_read/list/')
 			.then(res => res.json())
 			.then(data => {
 				setAnnouncements(data)
