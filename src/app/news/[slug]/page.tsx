@@ -2,9 +2,12 @@ import Image from 'next/image'
 import HtmlContent from '@/components/HtmlContent'
 
 async function getNews(slug: string) {
-	const res = await fetch(`http://37.27.188.235/ru/api/news/detail/${slug}/`, {
-		cache: 'no-store',
-	})
+	const res = await fetch(
+		`http://37.27.188.235:5000/ru/api/news/detail/${slug}/`,
+		{
+			cache: 'no-store',
+		}
+	)
 	const data = await res.json()
 	return data
 }
