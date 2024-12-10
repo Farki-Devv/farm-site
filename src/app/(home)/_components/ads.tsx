@@ -21,7 +21,7 @@ export default function Ads() {
 			try {
 				setLoading(true)
 				const response = await fetch(
-					'http://37.27.188.235:5000/uz/api/banner/most_read/list/',
+					`${process.env.NEXT_PUBLIC_SERVER}:${process.env.NEXT_PUBLIC_PORT}/uz/api/banner/most_read/list/`,
 					{
 						headers: {
 							Accept: 'application/json',

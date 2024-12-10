@@ -19,7 +19,9 @@ export default function Announcements() {
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
-		fetch('http://37.27.188.235:5000/ru/api/elon/most_read/list/')
+		fetch(
+			`${process.env.NEXT_PUBLIC_SERVER}:${process.env.NEXT_PUBLIC_PORT}/ru/api/elon/most_read/list/`
+		)
 			.then(res => res.json())
 			.then(data => {
 				setAnnouncements(data)

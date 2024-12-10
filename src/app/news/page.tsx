@@ -22,7 +22,7 @@ export default function NewsPage() {
 	const [isLoading, setIsLoading] = useState(true)
 	const [error, setError] = useState<string | null>(null)
 
-	const apiUrl = 'http://37.27.188.235:5000/ru/api/news/most_read/list/'
+	const apiUrl = `${process.env.NEXT_PUBLIC_SERVER}:${process.env.NEXT_PUBLIC_PORT}/ru/api/news/most_read/list/`
 	useEffect(() => {
 		setIsLoading(true) // Har bir so'rovda loadingni o'rnatamiz
 		fetch(apiUrl)

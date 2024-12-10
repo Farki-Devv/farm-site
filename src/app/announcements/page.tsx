@@ -22,7 +22,9 @@ export default function AnnouncementsPage() {
 	const [error, setError] = useState<string | null>(null)
 
 	useEffect(() => {
-		fetch('http://37.27.188.235:5000/ru/api/elon/most_read/list/')
+		fetch(
+			`${process.env.NEXT_PUBLIC_SERVER}:${process.env.NEXT_PUBLIC_PORT}/ru/api/elon/most_read/list/`
+		)
 			.then(res => {
 				if (!res.ok) {
 					throw new Error(`HTTP error! status: ${res.status}`)

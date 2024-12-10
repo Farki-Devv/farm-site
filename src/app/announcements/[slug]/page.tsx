@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 async function getAnnouncement(slug: string) {
 	const res = await fetch(
-		`http://37.27.188.235:5000/ru/api/elon/detail/${slug}`,
+		`${process.env.NEXT_PUBLIC_SERVER}:${process.env.NEXT_PUBLIC_PORT}/ru/api/elon/detail/${slug}`,
 		{
 			cache: 'no-store',
 		}

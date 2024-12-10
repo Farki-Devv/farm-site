@@ -15,7 +15,9 @@ export default function Videos() {
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
-		fetch('http://37.27.188.235:5000/ru/api/youtube/header/list/')
+		fetch(
+			`${process.env.NEXT_PUBLIC_SERVER}:${process.env.NEXT_PUBLIC_PORT}/ru/api/youtube/header/list/`
+		)
 			.then(res => res.json())
 			.then(data => {
 				setVideos(data)
