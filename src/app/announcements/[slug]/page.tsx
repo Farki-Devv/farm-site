@@ -3,11 +3,11 @@
 import Image from 'next/image'
 
 async function getAnnouncement(slug: string) {
-	const res = await fetch(`http://localhost:3001/announcements?slug=${slug}`, {
+	const res = await fetch(`http://37.27.188.235/ru/api/elon/detail/${slug}`, {
 		cache: 'no-store',
 	})
 	const data = await res.json()
-	return data[0]
+	return data
 }
 
 export default async function AnnouncementDetail({

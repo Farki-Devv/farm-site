@@ -20,7 +20,7 @@ export default function Page() {
 		const fetchData = async () => {
 			try {
 				setIsLoading(true)
-				const res = await fetch('http://localhost:3001/management')
+				const res = await fetch('http://37.27.188.235/ru/api/workers/list/')
 				if (!res.ok) {
 					throw new Error(`HTTP error! status: ${res.status}`)
 				}

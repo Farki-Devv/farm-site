@@ -17,7 +17,7 @@ export default function Page() {
 	const [error, setError] = useState<string | null>(null)
 
 	useEffect(() => {
-		fetch('http://localhost:3001/goals')
+		fetch('http://37.27.188.235/ru/api/maqsad/list/')
 			.then(res => {
 				if (!res.ok) {
 					throw new Error(`HTTP error! status: ${res.status}`)
